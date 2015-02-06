@@ -4,9 +4,7 @@ module YelpHtmlParser
 
     def self.search(sw_latitude, sw_longitude, ne_latitude, ne_longitude, start_index = 0)
       link = YelpHtmlParser::YELP_DOMAIN +
-        "search?start=#{ start_index }&l=g:
-        #{ sw_latitude },#{ sw_longitude },
-        #{ ne_latitude },#{ ne_longitude }"
+        "search?start=#{ start_index }&l=g:#{ sw_latitude },#{ sw_longitude },#{ ne_latitude },#{ ne_longitude }"
       user_agent = "googlebot"
       options = { 'User-Agent' => 'Googlebot', 'read_timeout' => '20' }
       doc = Nokogiri::HTML(open(link, options))
