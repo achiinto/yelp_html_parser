@@ -3,11 +3,13 @@ module YelpHtmlParser
     class Business
 
       def initialize(business_data)
+        return unless business_data
         @main_attributes =  business_data.css('.main-attributes')
         @secondary_attributes =  business_data.css('.secondary-attributes')
       end
 
       def build_business
+        return nil unless @main_attributes
         business = YelpHtmlParser::Resources::Business.new
         business.business_name = @main_attributes.css('.biz-name').first.children[0].to_s
         business.url = @main_attributes.css('.biz-name').first.attributes["href"].value

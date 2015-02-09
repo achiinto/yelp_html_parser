@@ -12,7 +12,8 @@ module YelpHtmlParser
       content.css('.search-result').map do |business_content|
         YelpHtmlParser::ResourceParsers::Business.new(business_content).build_business
       end
-      # need error handling in case of 503 error.
+    rescue OpenURI::HTTPError => e
+      fail YelpHtmlParser::Errors::NetworkError
     end
   end
 end
