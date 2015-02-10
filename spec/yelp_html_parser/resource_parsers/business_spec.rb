@@ -66,8 +66,8 @@ describe YelpHtmlParser::ResourceParsers::Business do
         expect(business.business_name).to eq "Car House Auto Service"
         expect(business.url).to eq "/biz/car-house-auto-service-richmond-hill"
         expect(business.avatar).to eq "//s3-media2.fl.yelpcdn.com/assets/srv0/yelp_styleguide/5f69f303f17c/assets/img/default_avatars/business_medium_square.png"
-        expect(business.address).to eq "\n            26 Colston Court<br>Richmond Hill, ON L4C 9Z2<br>Canada\n        "
-        expect(business.phone).to eq "\n        (416) 262-9696\n    "
+        expect(business.address).to eq "26 Colston Court, Richmond Hill, ON L4C 9Z2, Canada"
+        expect(business.phone).to eq "(416) 262-9696"
       end
     end
 
