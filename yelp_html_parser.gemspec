@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "nokogiri", "~> 1.6.5"
+  s.add_dependency "nokogiri", "~> 1.6"
 
   s.add_development_dependency "rspec", "~> 3.2"
   s.add_development_dependency 'webmock', "~> 1.20"
